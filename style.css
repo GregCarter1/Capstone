@@ -1,0 +1,58 @@
+body {
+  /* background-image: url("/docs/assets_img/EFK logo.jpg");
+  background-size: cover;
+  background-blend-mode: .6; */
+  /* background-position: */
+  /* background-attachment: fixed;
+  background-color: ; */
+  /* background-color: inherit; */
+  /* background-attachment: initial; */
+  margin: 65px;
+  padding: 5px 5px 5px 5px;
+}
+img {
+  border: 2px solid black;
+  border-radius: 25px;
+}
+h1 {
+  font-weight: bolder;
+  text-decoration: underline;
+  text-align: center;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+}
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight:900;
+  text-decoration: underline;
+  text-align: center;
+}
+.grid-container1 {
+  display:grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 10px;
+}
+footer {
+  text-align:left;
+  border-style: double;
+  font-weight: 700;
+}
+.videos {
+  text-align: center;
+  border-style:solid;
+}
+.grid-container2 {
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+
