@@ -6,24 +6,40 @@
   <title>Document</title>
   <style>
     body {
-      background-image: url("docs/assets_img/karate.jpg");
+      background-image: url("/docs/assets_img/karate.jpg");
       background-position:inherit;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-size: contain;
+      background-repeat: repeat;
       background-attachment:fixed;
     }
-
   </style>
   <link rel="stylesheet"  href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+
+/>
 </head>
 <body>
-  <!-- <Header>Elite Freestyle Karate</Header> -->
+  <div id="headContainer">
+    <header>
+    <img src="/docs/assets_img/EFK logo.jpg" alt="EFK Logo" width="150" height="150">
+    <h1>Elite Freestyle Karate</h1></header>
+  <nav>
+    <i class="fas fa-bars"></i>
+    <ul class="hidden--mobile nav-links">
+      <li>Home</li>
+      <li>Contact</li>
+      <li>Sensei</li>
+      <li>Student</li>
+    </ul>
+  </nav>
+</div>
+
 
 <main>
-  <img src="/docs/assets_img/EFK logo.jpg" alt="EFK Logo" width="150" height="150">
-  <nav>Hamburger</nav>
+  <!-- <img src="/docs/assets_img/EFK logo.jpg" alt="EFK Logo" width="150" height="150"> -->
+  <!-- <nav>Hamburger</nav> -->
   <div>
-    <h1>ELite Freestyle Karate Performance Tracking App</h1>
+    <h1>Elite Freestyle Karate Performance Tracking App</h1>
     <p>During your journey, whether you are beginning White Belts or experienced Black Belts,
       You have, or will in the future, needed to track your performance of the skills you learn.
       You will also have a need to track the progress you are making towards your next goal.
@@ -72,32 +88,33 @@
   </div>
 
 
-<div class="grid-container2">
-  <div class="grid-item1">
-    <h2>Contact Us:</h2>
-    <form action="" method="get"class="form">
-      <div class="form">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" placeholder="'John'">
-      </div>
-      <div class="form">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" placeholder="'Doe'">
-      <div class="form">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="'johndoe@gmail.com'">
-      <div class="form">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phoneNum" name="phoneNum">
-      <div class="form">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="10" cols="50"></textarea>
-      <div class="form">
-        <input type="submit" value="Submit"/>
-      </div>
-    </form>
-  </div>
-  <div class = "grid-item2">
+  <!-- <div class="flex-container2">
+    <div class="flex-item2">
+      <h2>Contact Us:</h2>
+      <form action="" method="get"class="form">
+        <div class="form">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="'John'">
+        </div>
+          <div class="form">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="'Doe'">
+          <div class="form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="'johndoe@gmail.com'">
+          <div class="form">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phoneNum" name="phoneNum">
+          <div class="form">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="10" cols="50"></textarea>
+          <div class="form">
+            <input type="submit" value="Submit"/>
+          </div>
+      </form>
+    </div>
+    <div class = "flex-item1">
+      <h2>EFK Information</h2>
         <!-- <h2 id = "contact">Contact Us</h2> -->
       <!-- <h2>Contact Information</h2> -->
       <p>Elite Freestyle Karate</p>
@@ -105,6 +122,10 @@
       <p>Phone: (781) 942-9898</p>
       <p>email: efkinfobedford@gmail.com</p>
       <p>Address: 285 Great Rd, Bedford, MA</p>
+    </div> -->
+  </div>
+  <div>
+    <footer>Created by Greg Carter 2023</footer>
   </div>
 </main>
 </body>
