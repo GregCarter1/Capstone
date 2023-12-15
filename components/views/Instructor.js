@@ -1,5 +1,5 @@
 import html from "html-literal";
 
 export default () => html`
-  <footer>Created by Greg Carter 2023</footer>
+  <h2>Sensei Work Area</h2>
 `;

@@ -22,10 +22,11 @@ router
       let view = capitalize(params.data.view);
       if (view in store) {
         render(store[view]);
-      } else {
-        render(store.Viewnotfound);
-        console.log(`View ${view} not defined`);
       }
+      // else {
+      //   render(store.Viewnotfound);
+      //   console.log(`View ${view} not defined`);
+      // }
     }
   })
   .resolve();
