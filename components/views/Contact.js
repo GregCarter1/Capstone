@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact EFK</title>
-  <style>
-    body {
-      background-image: url("/docs/assets_img/karate.jpg");
-      background-position:inherit;
-      background-size: contain;
-      background-repeat: repeat;
-      background-attachment:fixed;
-    }
-  </style>
-  <link rel="stylesheet"  href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-/>
-</head>
-<body>
-  <div class="flex-container2">
+import html from "html-literal";
+
+export default () => html`
+<div class="flex-container2">
     <div class="flex-item2">
       <h2>Contact Us:</h2>
-      <form action="https://formspree.io/f/xleyqojb" method="POST"class="form">
+      <form action="" method="get"class="form">
         <div class="form">
           <label for="firstName">First Name</label>
           <input type="text" id="firstName" name="firstName" placeholder="'John'">
@@ -45,18 +28,12 @@
     </div>
     <div class = "flex-item1">
       <h2>EFK Information</h2>
-        <!-- <h2 id = "contact">Contact Us</h2> -->
-      <!-- <h2>Contact Information</h2> -->
-      <p>Elite Freestyle Karate</p>
-      <p>Phone: (781) 942-9898</p>
-      <p>Phone: (781) 942-9898</p>
-      <p>email: efkinfobedford@gmail.com</p>
-      <p>Address: 285 Great Rd, Bedford, MA</p>
+        <h2 id = "contact">Contact Us</h2>
+        <p>Elite Freestyle Karate</p>
+        <p>Phone: (781) 942-9898</p>
+        <p>Phone: (781) 942-9898</p>
+        <p>email: efkinfobedford@gmail.com</p>
+        <p>Address: 285 Great Rd, Bedford, MA</p>
     </div>
   </div>
-  <div>
-    <footer>Created by Greg Carter 2023</footer>
-  </div>
-</main>
-</body>
-</html>
+  `;
