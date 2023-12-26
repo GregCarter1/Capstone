@@ -1,4 +1,5 @@
 export default {
   header: "EFK Instructor Page",
-  view: "Instructor"
+  view: "Instructor",
+  messages: []
 };
