@@ -33,7 +33,7 @@ function afterRender(state) {
 
   //   })
   }
-}
+
 router.hooks({
   before: (done, params) => {
     const view =
