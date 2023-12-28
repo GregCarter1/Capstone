@@ -1,8 +1,8 @@
 import html from "html-literal";
 
 export default () => html`
-  <div class = "videos">
+  <div class="videos">
     <h2>Technique Example videos</h2>
-    <P>White through black belts</P>
+    <p>White through black belts</p>
   </div>
 `;

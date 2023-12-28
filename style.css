@@ -1,22 +1,26 @@
 body {
-  /* background-image: url("/docs/assets_img/EFK logo.jpg");
-  background-size: cover;
-  background-blend-mode: .6; */
-  /* background-position: */
-  /* background-attachment: fixed;
-  background-color: ; */
-  /* background-color: inherit; */
+  background-image:"/assets/karate.jpg";
   background-attachment: initial;
   margin: 65px;
-  padding: 5px 5px 5px 5px;
+  padding: 15px 15px 15px 15px;
 }
-#headContainer {
-  font-size: xx-large;
-  font-weight: 900;
-  text-align: left;
-  background-color: rgb(83, 64, 64);
-  justify-content: space-between;
-  color: red;
+header {
+  background-color: blue;
+  color:rgb(237, 11, 11);
+
+}
+nav {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: space-around;
+}
+nav > ul > li {
+  display: inline-block;
+  justify-content:space-around;
+  border-radius: 20px;
+  border: 2px solid;
+  padding: 0.5rem 0.5rem;
 }
 @media (min-width: 800px) {
   nav > .fa-bars {
@@ -28,11 +32,34 @@ body {
     display: none;
   }
 }
-
+#headContainer {
+  display:inline-flex
+  font-size:contents;
+  font-weight: 900;
+  text-align: center;
+  justify-content:space-around;
+  color: rgb(206, 14, 14);
+}
 img {
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 20px;
 }
+.grid-container3 {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.grid-item3 {
+  grid-column: 1
+  grid-row:1;
+  width: 10%;
+  height: auto;
+  margin-right: 1rem;
+}
+.grid-item4 {
+  grid-column: 2;
+  grid-row:1;
+
 h1 {
   font-weight: bolder;
   text-decoration: underline;
@@ -42,6 +69,7 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   font-weight: 700;
+  text-align: center;
 }
 li {
   font-family: Arial, Helvetica, sans-serif;
@@ -88,4 +116,22 @@ footer {
   /* grid-gap: 10px; */
   border: 3px solid black;
 }
-
+.senseiWork {
+  display: flex;
+  flex-direction: column;
+  order: 4;
+}
+.senseiWork > img {
+  display:flex;
+  flex-direction: column;
+  align-items:left;
+  order: -1;
+  /* float: left; */
+  width: 40%;
+  height:max-content;
+  margin-right: 1rem;
+}
+.flex-item2 {
+  text-align: center;
+  align-items: center;
+}
