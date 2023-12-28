@@ -22,16 +22,16 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-  if (state.view === "Home") {
-    document.getElementById().addEventListener("click", event => {
-      event.preventDefault();
-      router.navigate("/contact");
-    });
-  }
-  if (state.view === "Contact") {
-    document.querySelector("from").addEventListener("submit", event => {
+  // if (state.view === "Home") {
+  //   document.getElementById().addEventListener("click", event => {
+  //     event.preventDefault();
+  //     router.navigate("/contact");
+  //   });
+  // }
+  // if (state.view === "Contact") {
+  //   document.querySelector("from").addEventListener("submit", event => {
 
-    })
+  //   })
   }
 }
 router.hooks({
@@ -65,20 +65,20 @@ router.hooks({
           });
         break;
 
-      case "Sensei":
-        axios
-          .get(`${process.env.CONTACT_FORM - SUBMISSIONS}/messages`)
-          .then(response => {
-            console.log("response", response);
-            store.Instructor.messages = response.data;
+      // case "Sensei":
+      //   axios
+      //     .get(`${process.env.CONTACT_FORM - SUBMISSIONS}/messages`)
+      //     .then(response => {
+      //       console.log("response", response);
+      //       store.Instructor.messages = response.data;
 
-            done();
-          })
-          .catch(error => {
-            console.alert("error", error);
-            done();
-          });
-        break;
+      //       done();
+      //     })
+      //     .catch(error => {
+      //       console.alert("error", error);
+      //       done();
+      //     });
+      //   break;
 
       default:
         done();
