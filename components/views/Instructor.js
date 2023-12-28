@@ -1,12 +1,12 @@
 import html from "html-literal";
 import tiedBelt from "../../assets/tied black belt.png";
-export default () => html`
+export default state => html`
   <h1>Sensei Work Area</h1>
 
   <div class="senseiWork">
-    <img src="${tiedBelt}"alt="tiedBlackBelt" />
+    <img src="${tiedBelt}" alt="tiedBlackBelt" />
   </div>
-  <message id="messages">
+  <table id="messages">
     <tr>
       <th>Name</th>
       <th>Email</th>
@@ -18,5 +18,5 @@ export default () => html`
         return `<tr><td>${instructor.name}}</td><td>${instructor.email}</td><td>${instructor.phone}</td><td>${instructor.message}</td></tr>`;
       })
       .join("")}
-  </message>
+  </table>
 `;
