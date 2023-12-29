@@ -50,11 +50,11 @@ router.hooks({
             store.Instructor.instructors = {
               eventId: response.data.num,
               name: response.data.name,
-              season: response.data.year,
-              day: response.data.day,
-              dateTime: response.data.dateTime,
-              status: response.data.status,
-              active: response.data.active
+              // season: response.data.year,
+              day: response.data.day
+              // dateTime: response.data.dateTime,
+              // status: response.data.status,
+              // active: response.data.active
             };
 
             done();
