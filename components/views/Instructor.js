@@ -19,4 +19,10 @@ export default state => html`
       })
       .join("")}
   </table>
+
+  <h3>
+    Upcoming Events and stats: UFC ${state.instructors.eventId},
+    ${state.instructors.name} on ${state.instructors.day}.
+  </h3>
 `;
+// process.env.OPEN_MMA_MAP_API_KEY
