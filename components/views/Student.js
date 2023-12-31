@@ -1,6 +1,6 @@
 import html from "html-literal";
 import blackBeltBoard from "../../assets/bbc wall.webp";
-export default () => html`
+export default state => html`
   <h1>Ninja Log and Tracker</h1>
   <img src="${blackBeltBoard}" alt="BlackBelt" />
   <div class="student-info">

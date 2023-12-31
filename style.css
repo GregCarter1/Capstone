@@ -1,9 +1,18 @@
-body {
+/* body {
   background-image:"/assets/karate.jpg";
   background-attachment: initial;
   margin: 65px;
   padding: 15px 15px 15px 15px;
+} */
+
+body {
+  background-image: url("assets/karate.jpg");
+  background-position:inherit;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment:fixed;
 }
+
 header {
   background-color: blue;
   color:rgb(237, 11, 11);
