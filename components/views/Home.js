@@ -1,7 +1,7 @@
 import html from "html-literal";
 import blackBeltBoard from "../../assets/bbc wall.webp";
 
-export default () => html`
+export default state => html`
   <div class = "main">
     <div class="grid-container3">
     <div class ="grid-item3">
