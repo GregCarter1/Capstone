@@ -15,7 +15,7 @@ export default () => html`
             required
           />
           <br />
-          <label for="email-address">Email Address: </label>
+          <label for="emailAddress">Email Address: </label>
           <input
             type="email"
             name="email"

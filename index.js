@@ -13,7 +13,7 @@ function render(state = store.Home) {
     ${Main(state)}
     ${Footer()}
   `;
-  router.updatePageLinks(state);
+  router.updatePageLinks();
   afterRender(state);
 }
 
@@ -22,15 +22,32 @@ function afterRender(state) {
   // document.querySelector(".fa-bars").addEventListener("click", () => {
   //   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   // });
-  // if (state.view === "Home") {
-  //   document.getElementById().addEventListener("click", event => {
-  //     event.preventDefault();
-  //     router.navigate("/contact");
-  //   });
-  // }
-  // if (state.view === "Contact") {
-  //   document.querySelector("from").addEventListener("submit", event => {
-  //   })
+
+  if (state.view === "Contact") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+    });
+  }
+  const inputList = event.target.elements;
+  console.log("Input Element List", inputList);
+
+  const requestData = {
+    fullname: inputList.fullname.value,
+    email: inputList.email.value,
+    phone: inputList.phone.value,
+    message: inputList.message.value
+  };
+  console.log("request Body", requestData);
+
+  axios
+    .post(`${process.env.CONTACT_API_URL}/contact`, requestData)
+    .then(response => {
+      store.Contact.messages.push(response.data);
+      router.navigate("/Contact");
+    })
+    .catch(error => {
+      console.log("error", error);
+    });
 }
 
 router.hooks({
