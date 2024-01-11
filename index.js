@@ -19,15 +19,15 @@ function render(state = store.Home) {
 
 function afterRender(state) {
   // add menu toggle to bars icon in nav bar
-  // document.querySelector(".fa-bars").addEventListener("click", () => {
-  //   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-  // });
+  document.querySelector(".fa-bars").addEventListener("click", () => {
+    document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+  });
 
   if (state.view === "Contact") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
-    });
-  }
+    }
+
   const inputList = event.target.elements;
   console.log("Input Element List", inputList);
 
@@ -48,6 +48,7 @@ function afterRender(state) {
     .catch(error => {
       console.log("error", error);
     });
+  });
 }
 
 router.hooks({
