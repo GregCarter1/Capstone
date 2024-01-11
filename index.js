@@ -26,7 +26,7 @@ function afterRender(state) {
   if (state.view === "Contact") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
-    }
+
 
   const inputList = event.target.elements;
   console.log("Input Element List", inputList);
