@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import contact from "./routers/contact.js";
+import routermessage from "./routers/routermessage.js";
 
 dotenv.config();
 const app = express();
