@@ -48,5 +48,5 @@ app.use(logging);
 app.get("/status", (request, response) => {
   response.status(200).json({ message: "Service healthy" });
 });
-app.use("/routermessage", routermessage);
+app.use("/contact", routermessage);
 app.listen(PORT, () => console.log("Listening on port 4040"));
