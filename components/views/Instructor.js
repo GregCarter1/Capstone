@@ -1,5 +1,7 @@
 import html from "html-literal";
 import tiedBelt from "../../assets/tied black belt.png";
+import contact from "../../server/models/message.js";
+
 export default state => html`
   <h1>Sensei Work Area</h1>
 
