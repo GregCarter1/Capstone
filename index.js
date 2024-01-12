@@ -27,30 +27,29 @@ function afterRender(state) {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
 
-  const inputList = event.target.elements;
-  console.log("Input Element List", inputList);
+      const requestData = {
+        fullname: inputList.fullname.value,
+        email: inputList.email.value,
+        phone: inputList.phone.value,
+        message: inputList.message.value
+      };
+      console.log("request Body", requestData);
 
-  const requestData = {
-    fullname: inputList.fullname.value,
-    email: inputList.email.value,
-    phone: inputList.phone.value,
-    message: inputList.message.value
-  };
-  console.log("request Body", requestData);
-
-  axios
-    .post(`${process.env.CONTACT_API_URL}/contact`, requestData)
-    .then(response => {
-      store.Contact.messages.push(response.data);
-      router.navigate("/Contact");
-    })
-    .catch(error => {
-      console.log("error", error);
+      axios
+        .post(`${process.env.CONTACT_API_URL}/contact`, requestData)
+        .then(response => {
+          store.Contact.messages.push(response.data);
+          router.navigate("/Contact");
+        })
+        .catch(error => {
+          console.log("error", error);
+        });
     });
-  });
+  }
 }
-
 router.hooks({
   before: (done, params) => {
     const view =
