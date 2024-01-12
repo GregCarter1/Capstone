@@ -22,13 +22,13 @@ const contactSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: true,
-    unique: true,
-    validate: {
-      validator: function(v) {
-        return /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v);
-      },
-      message: props => `${props.value} is not a valid phone number!`
-    }
+    unique: true
+    // validate: {
+    // validator: function(v) {
+    //   return /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(v);
+    // },
+    //   message: props => `${props.value} is not a valid phone number!`
+    // }
   },
   message: {
     type: String,

@@ -27,7 +27,7 @@ export default () => html`
           <label for="phone">Phone Number: </label>
           <input
             type="tel"
-            name="tel"
+            name="phone"
             id="tel-number"
             placeholder="555-555-5555"
           />

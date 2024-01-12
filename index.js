@@ -31,7 +31,7 @@ function afterRender(state) {
       console.log("Input Element List", inputList);
 
       const requestData = {
-        fullname: inputList.fullname.value,
+        fullName: inputList.name.value,
         email: inputList.email.value,
         phone: inputList.phone.value,
         message: inputList.message.value
