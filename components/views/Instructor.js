@@ -8,7 +8,41 @@ export default state => html`
   <div class="senseiWork">
     <img src="${tiedBelt}" alt="tiedBlackBelt" />
   </div>
+  <div class="sensei-student">
+    <h2>Message to Students</h2>
+    <form id="messagetoStudents" method="POST" action="">
+    <label for="name">Sensei</label>
+    <select name="sensei" id="sensei">
+      <option value="">---- </option>
+      <option value="manny">Manny</option>
+      <option value="ethan">Ethan</option>
+      <option value="ryan">Ryan</option>
+    </select><br
+
+    <label for="message">Message:</label><br />
+      <textarea
+        rows="10"
+        cols="50"
+        name="message"
+        id="message"
+        required=""
+        >
+      </textarea>
+  <input type="submit" value="Submit" />
+  </form>
+  </div>
+  <div class="messageFromStudent">
+    <table id="incomingMail">
+      <h2>From Students<h2>
+    <tr>
+      <th>Date Submitted</th>
+      <th>Student Name</th>
+      <th>Message</th>
+    </tr>
+  </div
+
   <table id="messages">
+    <h2>Messages<h2>
     <tr>
       <th>Name</th>
       <th>Email</th>

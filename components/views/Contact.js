@@ -50,16 +50,14 @@ export default () => html`
           <input type="submit" value="Submit" />
         </form>
       </div>
-      <br />
-      <div class="flex-item1">
-        <h2>EFK Information</h2>
-        <h2 id="contact">Contact Us</h2>
-        <p>Elite Freestyle Karate</p>
-        <p>Phone: (781) 942-9898</p>
-        <p>Phone: (781) 942-9898</p>
-        <p>email: efkinfobedford@gmail.com</p>
-        <p>Address: 285 Great Rd, Bedford, MA</p>
-      </div>
     </div>
+  </div>
+  <div class="flex-container1">
+    <h2>EFK Contact Information</h2>
+    <h2 id="contact">Contact Us</h2>
+    <p>Elite Freestyle Karate</p>
+    <p>Phone: (781) 942-9898</p>
+    <p>email: efkinfobedford@gmail.com</p>
+    <p>Address: 285 Great Rd, Bedford, MA</p>
   </div>
 `;

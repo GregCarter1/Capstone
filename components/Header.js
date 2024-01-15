@@ -1,11 +1,11 @@
 import html from "html-literal";
-// import efkLogo from "../assets/EFK logo.jpg";
+import EFKLogo from "../assets/EFKLogo.jpg";
 
 export default state => html`
   <div id="headContainer">
     <header>
+      <img src="EFKLogo" alt="EFKLogo" width="300" height="300"
       <h1>${state.header}</h1>
     </header>
-    <!-- <img src="efkLogo" alt="EFK Logo" width="150" height="150" -->
   </div>
 `;
