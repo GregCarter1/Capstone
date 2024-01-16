@@ -1,4 +1,5 @@
 export default {
   header: "Student Page",
-  view: "Student"
+  view: "Student",
+  trainingLog: []
 };

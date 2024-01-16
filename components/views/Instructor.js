@@ -49,6 +49,8 @@ export default state => html`
       <th>Phone Number</th>
       <th>Message</th>
     </tr>
+
+
     ${state.messages
       .map(instructor => {
         return `<tr><td>${instructor.name}}</td><td>${instructor.email}</td><td>${instructor.phone}</td><td>${instructor.message}</td></tr>`;

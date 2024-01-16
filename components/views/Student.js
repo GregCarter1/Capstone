@@ -56,7 +56,7 @@ export default state => html`
       <option value="brown">Brown</option>
       <option value="black">Black</option>
     </select>
-    <label for="katapractrice">Minutes Practiced:</label>
+    <label for="katapractice">Minutes Practiced:</label>
     <input type="number" id="minutes" name="Minutes" value="minutes" /><br
 
     <label for="distance">Running: Distance:</label>
