@@ -23,6 +23,39 @@ function afterRender(state) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
+  if (state.view === "Student") {
+    document.querySelector("form").addEventListener("save", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        training: inputList.training.value,
+        kata: inputList.kat.value,
+        katapractice: inputList.katapractice.value,
+        distance: inputList.distance.value,
+        pace: inputList.pace.value,
+        time: inputList.time.value,
+        pushups: inputList.pushups.value,
+        crunches: inputList.crunches.value,
+        burpies: inputList.burpies.value,
+        wallsit: inputList.wallsit.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.TRAININ_LOG__URL}/student`, requestData)
+        .then(response => {
+          store.Student.trainingLog.push(response.data);
+          router.navigate("/Student");
+        })
+        .catch(error => {
+          console.log("error", error);
+        });
+    });
+  }
+
   if (state.view === "Contact") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -41,7 +74,7 @@ function afterRender(state) {
       axios
         .post(`${process.env.CONTACT_API_URL}/contact`, requestData)
         .then(response => {
-          store.Contact.messages.push(response.data);
+          store.Instructor.messages.push(response.data);
           router.navigate("/Contact");
         })
         .catch(error => {
@@ -66,11 +99,7 @@ router.hooks({
             store.Instructor.instructors = {
               eventId: response.data.num,
               name: response.data.name,
-              // season: response.data.year,
               day: response.data.day
-              // dateTime: response.data.dateTime,
-              // status: response.data.status,
-              // active: response.data.active
             };
 
             done();
@@ -81,21 +110,15 @@ router.hooks({
           });
         break;
 
-      // case "Sensei":
-      //   axios
-      //     .get(`${process.env.CONTACT_FORM - SUBMISSIONS}/messages`)
-      //     .then(response => {
-      //       console.log("response", response);
-      //       store.Instructor.messages = response.data;
+      case "student":
+        axios
+          .get(`${process.env.TRAINING_LOG_URL}/trainingrouter`)
+          .then(response => {
+            console.log("response", response);
 
-      //       done();
-      //     })
-      //     .catch(error => {
-      //       console.alert("error", error);
-      //       done();
-      //     });
-      //   break;
-
+            done();
+          });
+        break;
       default:
         done();
     }
