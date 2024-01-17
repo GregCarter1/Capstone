@@ -27,6 +27,34 @@ export default state => html`
       </p>
     </div>
   </div>
+  <div class="signup">
+    <div class="studentinfo1">
+      <h2>Sign Up Here</h2><br>
+
+      <label for="fullName">Full Name:</label>
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        placeholder="'John Doe'"
+      />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" />
+      <label for="belt">Belt Level:</label>
+      <select name="belt" id="belt-level">
+        <option value="">--Select your Belt-- </option>
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="red">Red</option>
+        <option value="brown">Brown</option>
+        <option value="black">Black</option>
+      </select>
+    </div><br>
+  </div>
   <div class="grid-container1">
     <div class ="grid-item1">
       <h2>Track and Progress</h2>

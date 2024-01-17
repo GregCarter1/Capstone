@@ -11,15 +11,15 @@ export default state => html`
   <div class="sensei-student">
     <h2>Message to Students</h2>
     <form id="messagetoStudents" method="POST" action="">
-    <label for="name">Sensei</label>
+    <label for="name">From Sensei</label>
     <select name="sensei" id="sensei">
       <option value="">---- </option>
       <option value="manny">Manny</option>
       <option value="ethan">Ethan</option>
       <option value="ryan">Ryan</option>
-    </select><br
+    </select><br>
 
-    <label for="message">Message:</label><br />
+    <label for="message">Message:</label><br>
       <textarea
         rows="10"
         cols="50"
@@ -39,7 +39,7 @@ export default state => html`
       <th>Student Name</th>
       <th>Message</th>
     </tr>
-  </div
+</div>
 
   <table id="messages">
     <h2>Messages<h2>

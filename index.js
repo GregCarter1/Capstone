@@ -24,29 +24,30 @@ function afterRender(state) {
   });
 
   if (state.view === "Student") {
-    document.querySelector("form").addEventListener("save", event => {
+    document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
-      const inputList = event.target.elements;
-      console.log("Input Element List", inputList);
+      const trainingList = event.target.elements;
+      console.log("Input Element List", trainingList);
 
-      const requestData = {
-        training: inputList.training.value,
-        kata: inputList.kat.value,
-        katapractice: inputList.katapractice.value,
-        distance: inputList.distance.value,
-        pace: inputList.pace.value,
-        time: inputList.time.value,
-        pushups: inputList.pushups.value,
-        crunches: inputList.crunches.value,
-        burpies: inputList.burpies.value,
-        wallsit: inputList.wallsit.value
+      const trainingData = {
+        training: trainingList.training.value,
+        kata: trainingList.kata.value,
+        katapractice: trainingList.katapractice.value,
+        distance: trainingList.distance.value,
+        pace: trainingList.pace.value,
+        time: trainingList.time.value,
+        pushups: trainingList.pushups.value,
+        crunches: trainingList.crunches.value,
+        burpies: trainingList.burpies.value,
+        wallsit: trainingList.wallsit.value
       };
-      console.log("request Body", requestData);
+      console.log("request Body", trainingData);
 
       axios
-        .post(`${process.env.TRAININ_LOG__URL}/student`, requestData)
+        .post(`${process.env.TRAINING_LOG_URL}/trainingrouter`, trainingData)
         .then(response => {
+          console.log(response.data);
           store.Student.trainingLog.push(response.data);
           router.navigate("/Student");
         })
@@ -97,7 +98,7 @@ router.hooks({
           )
           .then(response => {
             store.Instructor.instructors = {
-              eventId: response.data.num,
+              eventId: response.data.eventId,
               name: response.data.name,
               day: response.data.day
             };
@@ -110,15 +111,21 @@ router.hooks({
           });
         break;
 
-      case "student":
-        axios
-          .get(`${process.env.TRAINING_LOG_URL}/trainingrouter`)
-          .then(response => {
-            console.log("response", response);
+      // case "student":
+      //   axios
+      //     .get(`${process.env.TRAINING_LOG_URL}/trainingrouter`)
+      //     .then(response => {
+      //       console.log("response", response);
+      //       store.Student.trainingrouter = response.data;
 
-            done();
-          });
-        break;
+      //       done();
+      //     })
+
+      //     .catch(error => {
+      //       console.log("error", error);
+      //       done();
+      //     });
+      //   break;
       default:
         done();
     }
