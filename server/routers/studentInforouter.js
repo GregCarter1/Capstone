@@ -1,13 +1,13 @@
 import { Router } from "express";
-import trainingLog from "../models/trainingLog.js";
+import studentInfo from "../models/studentInfo.js";
 
 const router = Router();
 
 router.post("/", async (request, response) => {
   try {
-    const newtrainingLog = new trainingLog(request.body);
+    const newstudentInfo = new studentInfo(request.body);
 
-    const data = await newtrainingLog.save();
+    const data = await newstudentInfo.save();
 
     response.json(data);
   } catch (error) {
@@ -24,7 +24,7 @@ router.get("/", async (request, response) => {
   try {
     const query = request.query;
 
-    const data = await trainingLog.find(query);
+    const data = await studentInfo.find(query);
 
     response.json(data);
   } catch (error) {
@@ -36,7 +36,7 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
   try {
-    const data = await trainingLog.findById(request.params.id);
+    const data = await studentInfo.findById(request.params.id);
 
     response.json(data);
   } catch (error) {
@@ -48,7 +48,7 @@ router.get("/:id", async (request, response) => {
 
 router.delete("/:id", async (request, response) => {
   try {
-    const data = await trainingLog.findByIdAndRemove(request.params.id, {});
+    const data = await studentInfo.findByIdAndRemove(request.params.id, {});
 
     response.json(data);
   } catch (error) {
@@ -62,26 +62,20 @@ router.put("/:id", async (request, response) => {
   try {
     const body = request.body;
 
-    const data = await trainingLog.findByIdAndUpdate(
+    const data = await studentInfo.findByIdAndUpdate(
       request.params.id,
       {
         $set: {
-          training: body.training,
-          kata: body.kata,
-          katapractice: body.katapractice,
-          distance: body.distance,
-          pace: body.pace,
-          time: body.time,
-          pushups: body.pushups,
-          crunches: body.crunches,
-          burpies: body.burpies,
-          wallsit: body.wallsit
+          fullName: body.fullName,
+          age: body.age,
+          belt: body.belt
         }
       },
       {
         new: true
       }
     );
+
     response.json(data);
   } catch (error) {
     console.log(error);
