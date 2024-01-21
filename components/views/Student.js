@@ -5,21 +5,6 @@ export default state => html`
   <h1>Ninja Log and Tracker</h1>
   <img src="${blackBeltBoard}" alt="BlackBelt" />
 
-  <div class="newStudent">
-  <table id="newStudent">
-    <h2>Future Black Belt<h2>
-    <tr>
-      <th>Full Name</th>
-      <th>age</th>
-      <th>Belt Level</th>
-    </tr>
-    ${state.studentInfo
-      .map(newStudent => {
-        return `<tr><td>${newStudent.fullName}</td><td>${newStudent.age}</td><td>${newStudent.belt}</td>`;
-      })
-      .join("")}
-    </table>
-  </div>
 
   <div class="trainingLog">
   <form id="trainingLog" method="POST" action="">

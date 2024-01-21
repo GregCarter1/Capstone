@@ -20,8 +20,8 @@ const contactSchema = new mongoose.Schema({
     }
   },
   phone: {
-    type: String,
-    required: true
+    type: String
+    // required: true
     // unique: true
   },
   message: {

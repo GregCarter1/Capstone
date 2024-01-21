@@ -7,6 +7,13 @@ export default state => html`
     <div class ="grid-item3">
       <img src= "${blackBeltBoard}" alt="BlackBelt" />
     </div>
+
+    <h3>
+    The weather in ${state.weather.city} is ${state.weather.description}.
+    Temperature is ${state.weather.temp}F, and it feels like
+    ${state.weather.feelsLike}F.
+  </h3>
+
     <div class="grid-container4">
     <div class ="grid-item4">
     <h1>Elite Freestyle Karate Performance Tracking App</h1>
@@ -27,10 +34,10 @@ export default state => html`
       </p>
     </div>
   </div>
-  <div class="signup">
+  <!-- <div class="signup">
     <div class="studentinfo1">
       <h2>Sign Up Here</h2><br>
-
+    <form>
       <label for="fullName">Full Name:</label>
       <input
         type="text"
@@ -54,7 +61,9 @@ export default state => html`
         <option value="black">Black</option>
       </select>
     </div><br>
-  </div>
+    <input type="submit" value="Submit" />
+    </form>
+  </div> -->
   <div class="grid-container1">
     <div class ="grid-item1">
       <h2>Track and Progress</h2>

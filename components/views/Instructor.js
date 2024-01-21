@@ -51,16 +51,10 @@ export default state => html`
     </tr>
 
 
-    ${state.messages
-      .map(instructor => {
-        return `<tr><td>${instructor.name}}</td><td>${instructor.email}</td><td>${instructor.phone}</td><td>${instructor.message}</td></tr>`;
+    ${state.routermessage
+      .map(routermessage => {
+        return `<tr><td>${routermessage.name}}</td><td>${routermessage.email}</td><td>${routermessage.phone}</td><td>${routermessage.message}</td></tr>`;
       })
       .join("")}
   </table>
-
-  <h3>
-    Upcoming Events and stats: UFC ${state.instructors.eventId},
-    ${state.instructors.name} on ${state.instructors.day}.
-  </h3>
 `;
-// process.env.OPEN_MMA_MAP_API_KEY

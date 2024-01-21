@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import routermessage from "./routers/routermessage.js";
 import trainingrouter from "./routers/trainingrouter.js";
-import studentInforouter from "./routers/studentInforouter.js";
+// import eventsrouter from "./routers/eventsrouter.js";
+// import studentInforouter from "./routers/studentInforouter.js";
 
 dotenv.config();
 const app = express();
@@ -53,6 +54,7 @@ app.get("/status", (request, response) => {
 
 app.use("/contact", routermessage);
 app.use("/trainingrouter", trainingrouter);
-app.use("/studentInforouter", studentInforouter);
+
+// app.use("/studentInforouter", studentInforouter);
 
 app.listen(PORT, () => console.log("Listening on port 4040"));
