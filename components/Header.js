@@ -1,5 +1,5 @@
 import html from "html-literal";
-import EFKLogo from "../assets/EFKLogo.jpg";
+// import EFKLogo from "../assets/EFKLogo.jpg";
 
 export default state => html`
   <div id="headContainer">
