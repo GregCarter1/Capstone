@@ -91,45 +91,53 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
     switch (view) {
-      case "Instructor":
+      // New Case for the Home View
+      case "Home":
         axios
+          // Get request to retrieve the current weather data using the API key and providing a city name
           .get(
-            `https://api.sportsdata.io/v3/mma/scores/json/Schedule/UFC/2023?key=${process.env.OPEN_MMA_MAP_API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=boston`
           )
           .then(response => {
-            store.Instructor.instructors = {
-              eventId: response.data.eventId,
-              name: response.data.name,
-              day: response.data.day
+            // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
+            const kelvinToFahrenheit = kelvinTemp =>
+              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+            // Create an object to be stored in the Home state from the response
+            store.Home.weather = {
+              city: response.data.name,
+              temp: kelvinToFahrenheit(response.data.main.temp),
+              feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
+              description: response.data.weather[0].main
             };
 
             done();
           })
           .catch(err => {
-            console.alert("error", err);
+            console.log(err);
             done();
           });
         break;
 
-      // case "student":
-      //   axios
-      //     .get(`${process.env.TRAINING_LOG_URL}/trainingrouter`)
-      //     .then(response => {
-      //       console.log("response", response);
-      //       store.Student.trainingrouter = response.data;
+      case "Contact":
+        axios
+          .get(`${process.env.CONTACT_API_URL}/routermessage`)
+          .then(response => {
+            console.log("response", response);
+            store.Instructor.routermessage = response.data;
 
-      //       done();
-      //     })
-
-      //     .catch(error => {
-      //       console.log("error", error);
-      //       done();
-      //     });
-      //   break;
+            done();
+          })
+          .catch(error => {
+            console.log("error", error);
+            done();
+          });
+        break;
       default:
         done();
     }
   },
+
   already: params => {
     const view =
       params && params.data && params.data.view
@@ -138,6 +146,7 @@ router.hooks({
     render(store[view]);
   }
 });
+
 router
   .on({
     "/": () => render(),
